@@ -23,37 +23,37 @@ else
     echo -e " $G YOur are the root user $N"
 fi 
 
-dnf install nginx -y &>>LOGFILE
+dnf install nginx -y &>>$LOGFILE
 
 VALIDATE $? "Installing nginx"
 
-systemctl enable nginx  &>>LOGFILE
+systemctl enable nginx  &>>$LOGFILE
 
 VALIDATE $? "enable nginx"
 
-systemctl start nginx  &>>LOGFILE
+systemctl start nginx  &>>$LOGFILE
 
 VALIDATE $? "start nginx"
 
-rm -rf /usr/share/nginx/html/*  &>>LOGFILE
+rm -rf /usr/share/nginx/html/*  &>>$LOGFILE
 
 VALIDATE $? "removing htmml directory"
 
-curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip  &>>LOGFILE
+curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip  &>>$LOGFILE
 
 VALIDATE $? "downloading the fronted files"
 
 cd /usr/share/nginx/html  
 
-unzip /tmp/frontend.zip &>>LOGFILE
+unzip /tmp/frontend.zip &>>$LOGFILE
 
 VALIDATE $? "uzip the files"
 
-cp /home/centos/roboshop-shell/web.conf /etc/nginx/default.d/roboshop.conf &>>LOGFILE
+cp /home/centos/roboshop-shell/web.conf /etc/nginx/default.d/roboshop.conf &>>$LOGFILE
 
 VALIDATE $? " Copying the files" 
 
-systemctl restart nginx  &>>LOGFILE
+systemctl restart nginx  &>>$LOGFILE
 
 VALIDATE $? "restart nginx"
 
