@@ -45,11 +45,11 @@ VALIDATE $? "downloading the fronted files"
 
 cd /usr/share/nginx/html  
 
-unzip /tmp/frontend.zip &>>$LOGFILE
+unzip -o /tmp/frontend.zip &>>$LOGFILE
 
 VALIDATE $? "uzip the files"
 
-cp /home/centos/roboshop-shell/web.conf /etc/nginx/default.d/roboshop.conf &>>$LOGFILE
+cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>$LOGFILE
 
 VALIDATE $? " Copying the files" 
 
