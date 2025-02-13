@@ -3,7 +3,7 @@
  USERID=$(id -u)
  R="\e[31m"
  G="\e[32m"
- N="\e[30m"
+ N="\e[0m"
  LOGFILE=/tmp/$0.log
  VALIDATE(){
     if [ $1 -ne 0 ]
