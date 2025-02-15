@@ -1,12 +1,13 @@
 #!/bin/bash
 DATE=$(date +%F)
+SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 IDUSER=$(id -u)
 R="\e[31m"
 G="\e[32"
 N="\e[0m"
 
-SCRIPT_NAME=$0
+
 
 VALIDATE(){
     if [ $1 -ne 0 ]
