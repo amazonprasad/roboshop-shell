@@ -51,7 +51,7 @@ VALIDATE $? "uzip the files"
 
 cp /home/centos/roboshop-shell/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>$LOGFILE
 
-VALIDATE $? " Copying the files" 
+VALIDATE $? "Copying the files" 
 
 systemctl restart nginx  &>>$LOGFILE
 
