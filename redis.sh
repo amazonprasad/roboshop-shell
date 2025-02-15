@@ -1,5 +1,5 @@
 #!/bin/bash
-
+SCRIPT_NAME=$0
 DATE=$(date +%F)
 USERID=$(id -u)
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
