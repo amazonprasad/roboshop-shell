@@ -3,10 +3,10 @@ DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 IDUSER=$(id -u)
-R="\e[31m"
-G="\e[32"
-Y="\e[33m"
-N="\e[0m"
+#R="\e[31m"
+#G="\e[32"
+#Y="\e[33m"
+#N="\e[0m"
 
 
 
