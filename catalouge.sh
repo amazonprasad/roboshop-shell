@@ -18,7 +18,7 @@ VALIDATE(){
     fi 
 }
 
-if [ $USERID -ne 0 ]
+if [ $USERID- ne 0 ]
 then 
     echo -e " $R ERROR: Your are not the root user $N"
     exit 1
@@ -47,7 +47,6 @@ else
     echo -e "roboshop user already exist $Y SKIPPING $N"
 fi
 
-VALIDATE $? " Creating user roboshop"
 
 mkdir -p /app 
 
@@ -97,9 +96,10 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Install mongodb"
 
-mongo --host 172.31.94.235 </app/schema/catalogue.js
+mongo --host 172.31.94.235 </app/schema/catalogue.js  &>> $LOGFILE
 
 VALIDATE $? "Replace the IP Address"
+
 
 
 
