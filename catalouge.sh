@@ -18,7 +18,7 @@ VALIDATE(){
     fi 
 }
 
-if [ $USERID- ne 0 ]
+if [ $IDUSER -ne 0 ]
 then 
     echo -e " $R ERROR: Your are not the root user $N"
     exit 1
@@ -38,7 +38,7 @@ dnf install nodejs -y  &>> $LOGFILE
 
 VALIDATE $? " Installing nodejs"
 
-id roboshop #if roboshop user does not exist, then it is failure
+id roboshop &>> $LOGFILE  #if roboshop user does not exist, then it is failure
 if [ $? -ne 0 ]
 then
     useradd roboshop
