@@ -7,7 +7,9 @@ IDUSER=$(id -u)
 #G="\e[32"
 #Y="\e[33m"
 #N="\e[0m"
-
+R="\e[31m"
+ G="\e[32m"
+ N="\e[0m"
 
 
 VALIDATE(){
