@@ -66,7 +66,7 @@ npm install   &>> $LOGFILE
  
 VALIDATE $? " Install rpm"
 
-cp /home/centos/roboshop-shell/catalouge.service /etc/systemd/system/catalogue.service 
+cp /home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service 
 
 VALIDATE $? "Copying the catalouge service"
 
