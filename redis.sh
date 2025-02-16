@@ -24,17 +24,30 @@ else
     echo -e " $G You are the root user $N"
 fi 
 
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>> $LOGFILE
+ sudo dnf install -y gcc make jemalloc-devel &>> $LOGFILE
 
-VALIDATE $? " Installing rpm "
+VALIDATE $? " Install build Dependies"
 
-dnf module enable redis:remi-6.2 -y &>> $LOGFILE
+wget http://download.redis.io/releases/redis-6.2.13.tar.gz
 
-VALIDATE $? " Enable redis"
+VALIDATE $? " Download Redis 6.2 Source Code"
 
-dnf install redis -y &>> $LOGFILE
+tar xzf redis-6.2.13.tar.gz &>> $LOGFILE
 
-VALIDATE $? "Install redis"
+VALIDATE $? "untar redis 6.2.13"
+
+cd redis-6.2.13 
+
+VALIDATE $? "changining the directory"
+
+make
+sudo make install &>> $LOGFILE
+
+VALIDATE $? "install make"
+
+redis-server-version &>> LOGFILE
+
+VALIDATE $? "redis version"
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis.conf 
 
