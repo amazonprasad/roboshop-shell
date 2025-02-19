@@ -4,7 +4,7 @@ DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 USERID=$(id -u)
-
+Mongodb_Host=mongodb.manacars.shop
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -81,6 +81,16 @@ systemctl start user
 
 VALIDATE $? " start user"
 
+
+cp /home/centos/roboshop-shell/mangodb.repo /etc/yum.repos.d/mongo.repo
+
+VALIDATE $? "Copying mongodb repo"
+
+dnf install mongodb-org-shell -y
+
+VALIDATE $? " installing mongodb"
+
+mongo --host $Mongodb_Host </app/schema/catalogue.js
 
 
 
