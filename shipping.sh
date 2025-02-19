@@ -20,7 +20,7 @@ VALIDATE(){
     fi 
 }
 
-if [ $USERID - ne 0 ]
+if [ $USERID -ne 0 ]
 then 
     echo -e " $R ERROR: You are not the root user $N"
 else 
@@ -49,7 +49,7 @@ curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shippin
 VALIDATE $? " Downloading files"
 
 cd /app 
-unzip -0 /tmp/shipping.zip &>> $LOGFILE
+unzip -o /tmp/shipping.zip &>> $LOGFILE
 
 VALIDATE $? " Unzip files"
 
