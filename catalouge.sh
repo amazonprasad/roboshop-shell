@@ -3,6 +3,7 @@ DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 IDUSER=$(id -u)
+Mongodb-host=mongodb.manacars.shop
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -98,7 +99,7 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Install mongodb"
 
-mongo --host 172.31.94.235 </app/schema/catalogue.js  &>> $LOGFILE
+mongo --host $Mongodb-host </app/schema/catalogue.js  &>> $LOGFILE
 
 VALIDATE $? "Replace the IP Address"
 
