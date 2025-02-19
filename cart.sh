@@ -59,18 +59,12 @@ VALIDATE $? " Downloading roboshop files"
 
 cd /app 
 
-VALIDATE $? " changing directory"
-
-unzip /tmp/cart.zip &>> $ LOGFILE
+unzip -o /tmp/cart.zip &>> $LOGFILE
 
 VALIDATE $? " Uzip the  files "
 
-cd /app  
-
-VALIDATE $? " changing directory"
-
-npm install &>> $ LOGFILE
-
+ npm install  &>> $LOGFILE
+  
 VALIDATE $? " Instaal npm"
 
 cp /home/centos/roboshop-shell/cart.service /etc/systemd/system/cart.service
