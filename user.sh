@@ -68,6 +68,21 @@ npm install  &>> $LOGFILE
 
 VALIDATE $? "Installing npm"
 
-    
+cp /home/centos/roboshop-shell/user.service /etc/systemd/system/user.service 
+
+VALIDATE $? "Copying files"
+
+systemctl daemon-reload 
+
+VALIDATE $? "Daemon reload"
+
+systemctl enable user 
+systemctl start user
+
+VALIDATE $? " start user"
+
+
+
+
 
 
