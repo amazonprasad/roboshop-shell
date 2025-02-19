@@ -49,7 +49,7 @@ curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shippin
 VALIDATE $? " Downloading files"
 
 cd /app 
-unzip /tmp/shipping.zip &>> $LOGFILE
+unzip -0 /tmp/shipping.zip &>> $LOGFILE
 
 VALIDATE $? " Unzip files"
 
@@ -66,7 +66,7 @@ cp /home/centos/roboshop-shell/shipping.service /etc/systemd/system/shipping.ser
 
 VALIDATE $? " copying files"
 
-systemctl daemon-reload 
+systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? " daemon-reload shipping"
 
