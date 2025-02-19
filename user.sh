@@ -49,7 +49,7 @@ else
 
 fi 
 
-mkdir -p /app 
+mkdir -p     /app 
 
 VALIDATE $? " Creating directory app"
 
@@ -59,7 +59,7 @@ cd /app
 
 VALIDATE $? " Changing directory"
 
-unzip /tmp/user.zip &>> $LOGFILE
+unzip -o /tmp/user.zip &>> $LOGFILE
 
 VALIDATE $? " Unziping files"
 
