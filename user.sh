@@ -49,7 +49,7 @@ else
 
 fi 
 
-mkdir /app 
+mkdir -p /app 
 
 VALIDATE $? " Creating directory app"
 
