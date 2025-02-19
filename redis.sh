@@ -22,28 +22,11 @@ then
     echo -e " $R ERROR: your are not the root user $N"
 else 
     echo -e " $G You are the root user $N"
-fi 
+fi
 
- sudo dnf install -y gcc make jemalloc-devel &>> $LOGFILE
+dnf install redis -y &>> LOGFILE
 
-VALIDATE $? " Install build Dependies"
-
-wget http://download.redis.io/releases/redis-6.2.13.tar.gz
-
-VALIDATE $? " Download Redis 6.2 Source Code"
-
-tar xzf redis-6.2.13.tar.gz &>> $LOGFILE
-
-VALIDATE $? "untar redis 6.2.13"
-
-cd redis-6.2.13 
-
-VALIDATE $? "changining the directory"
-
-make
-sudo make install &>> $LOGFILE
-
-VALIDATE $? "install make"
+VALIDATE $? " Installing redis"
 
 redis-server-version &>> LOGFILE
 
@@ -57,6 +40,8 @@ systemctl enable redis  &>> $LOGFILE
 systemctl start redis   &>> $LOGFILE
 
 VALIDATE $? "Enable and start redis"
+
+
 
 
 
