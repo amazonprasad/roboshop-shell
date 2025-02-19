@@ -30,7 +30,7 @@ VALIDATE $? " Installing redis"
 
 redis-server-version &>> LOGFILE
 
-VALIDATE $? "redis version"
+VALIDATE $? "redis version" 
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/redis.conf 
 
