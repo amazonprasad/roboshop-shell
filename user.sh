@@ -86,11 +86,11 @@ cp /home/centos/roboshop-shell/mangodb.repo /etc/yum.repos.d/mongo.repo
 
 VALIDATE $? "Copying mongodb repo"
 
-dnf install mongodb-org-shell -y
+dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? " installing mongodb"
 
-mongo --host $Mongodb_Host </app/schema/catalogue.js
+mongo --host $Mongodb_Host </app/schema/user.js
 
 
 
