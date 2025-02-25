@@ -91,7 +91,7 @@ systemctl start catalogue
 
 VALIDATE $? "Start Catalouge"
 
-cp /home/centos/roboshop-shell/mangodb.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo
 
 VALIDATE $? "Copying the mongodb.repo"
 
