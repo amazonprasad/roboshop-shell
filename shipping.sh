@@ -73,9 +73,18 @@ VALIDATE $? " daemon-reload shipping"
 systemctl enable shipping 
 systemctl start shipping
 
-
 VALIDATE $? " enable and start shipping"
 
+dnf install mysql -y  &>> $LOGFILE
+VALIDATE $? " Install mysql"
+
+mysql -h mysql.manacars.shop -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
+
+VALIDATE $? " loading shipping data"
+
+systemctl restart shipping  &>> $LOGFILE 
+
+VALIDATE $? "restart shipping"
 
 
 

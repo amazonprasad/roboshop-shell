@@ -23,7 +23,7 @@ else
     echo -e " $G YOur are the root user $N"
 fi 
 
-cp /home/centos/roboshop-shell/mangodb.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
+cp /home/centos/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo &>>$LOGFILE
 
 VALIDATE $? "Copying mangodb.repo"
 

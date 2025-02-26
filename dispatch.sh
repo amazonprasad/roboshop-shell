@@ -67,7 +67,7 @@ go build  &>> $LOGFILE
 
 VALIDATE $? "go build"
 
-cp /home/centos/roboshop-shell/dipatch.service /etc/systemd/system/dispatch.service 
+cp /home/centos/roboshop-shell/dispatch.service /etc/systemd/system/dispatch.service 
 
 VALIDATE $? " copying files"
 

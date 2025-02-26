@@ -28,7 +28,7 @@ dnf install redis -y &>> LOGFILE
 
 VALIDATE $? " Installing redis"
 
-redis-server-version &>> LOGFILE
+redis-server --version &>> LOGFILE
 
 VALIDATE $? "redis version" 
 

@@ -82,7 +82,7 @@ systemctl start user
 VALIDATE $? " start user"
 
 
-cp /home/centos/roboshop-shell/mangodb.repo /etc/yum.repos.d/mongo.repo
+cp /home/centos/roboshop-shell/mongodb.repo /etc/yum.repos.d/mongo.repo
 
 VALIDATE $? "Copying mongodb repo"
 

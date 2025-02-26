@@ -50,7 +50,3 @@ mysql_secure_installation --set-root-pass RoboShop@1 &>> $LOGFILE
 
 VALIDATE $? " Set mysql password"
 
-mysql -uroot -pRoboShop@1 &>> $LOGFILE
-
-VALIDATE $? " Check password"
-
