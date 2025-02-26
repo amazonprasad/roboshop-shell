@@ -78,7 +78,7 @@ VALIDATE $? " enable and start shipping"
 dnf install mysql -y  &>> $LOGFILE
 VALIDATE $? " Install mysql"
 
-mysql -h mysql.manacars.shop -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
+mysql -h 172.31.88.163 -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
 
 VALIDATE $? " loading shipping data"
 
