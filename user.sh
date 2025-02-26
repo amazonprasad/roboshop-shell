@@ -90,7 +90,7 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? " installing mongodb"
 
-mongo --host $Mongodb_Host </app/schema/user.js &>> $LOGFILE
+mongo --host 172.31.88.75 </app/schema/user.js &>> $LOGFILE
 
 VALIDATE $? "Host mongodb"
 
