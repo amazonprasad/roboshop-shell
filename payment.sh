@@ -32,7 +32,7 @@ dnf install python36 gcc python3-devel -y &>> $LOGFILE
 
 VALIDATE $? " Install python"
 
-id=roboshop
+id roboshop
 if [ $? -ne 0 ]
 then 
     useradd roboshop
