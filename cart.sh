@@ -40,7 +40,7 @@ dnf install nodejs -y &>> $LOGFILE
 
 VALIDATE $? " Install Node js"
 
-id=roboshop
+id roboshop
 if [ $? -ne 0 ]
 then 
     useradd roboshop
