@@ -20,7 +20,7 @@ VALIDATE(){
     fi 
 }
 
-if [ $USERID - ne 0 ]
+if [ $USERID - ne 0 ];
 then 
     echo -e " $R ERROR: You are not the root user $N"
 else 
