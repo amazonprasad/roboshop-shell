@@ -50,7 +50,7 @@ curl -L -o /tmp/dispatch.zip https://roboshop-artifacts.s3.amazonaws.com/dispatc
 VALIDATE $? " downloading files"
 
 cd /app 
-unzip -o /tmp/dispatch.zip &>> $LOGFILE
+unzip  /tmp/dispatch.zip &>> $LOGFILE
 
 VALIDATE $? " unzip files"
 
