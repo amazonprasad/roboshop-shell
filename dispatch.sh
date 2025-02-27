@@ -55,7 +55,9 @@ unzip -o /tmp/dispatch.zip &>> $LOGFILE
 VALIDATE $? " unzip files"
 
 cd /app 
+
 go mod init dispatch &>> $LOGFILE
+
 VALIDATE $? " go mod init dispatch"
 
 go get &>> $LOGFILE
