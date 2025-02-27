@@ -32,7 +32,7 @@ dnf install golang -y &>> $LOGFILE
 
 VALIDATE $? "Install goland"
 
-id roboshop 
+id roboshop &>> $LOGFILE
 if [ $? -ne 0 ]
 then 
     useradd roboshop 
