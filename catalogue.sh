@@ -99,7 +99,7 @@ dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "Install mongodb"
 
-mongo --host 172.31.88.75 </app/schema/catalogue.js  &>> $LOGFILE
+mongo --host $Mongodb_Host </app/schema/catalogue.js  &>> $LOGFILE
 
 VALIDATE $? "Replace the IP Address"
 
