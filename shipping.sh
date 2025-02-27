@@ -4,7 +4,7 @@ DATE=$(date +%F)
 SCRIPT_NAME=$0
 LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 USERID=$(id -u)
-Mongodb_Host=mongodb.manacars.shop
+Mysql_Host=mysql.manacars.shop
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
@@ -78,7 +78,7 @@ VALIDATE $? " enable and start shipping"
 dnf install mysql -y  &>> $LOGFILE
 VALIDATE $? " Install mysql"
 
-mysql -h 172.31.88.163 -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
+mysql -h $Mysql_Host -uroot -pRoboShop@1 < /app/schema/shipping.sql &>> $LOGFILE
 
 VALIDATE $? " loading shipping data"
 
