@@ -83,7 +83,7 @@ systemctl daemon-reload
 
 VALIDATE $? "Daemon reload service"
 
-systemctl enable catalogue 
+systemctl enable catalogue &>> $LOGFILE
 
 VALIDATE $? "Enable catalouge"
 

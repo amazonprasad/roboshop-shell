@@ -41,7 +41,7 @@ dnf install mysql-community-server -y  &>> $LOGFILE
 
 VALIDATE $? "Install mysql"
 
-systemctl enable mysqld
+systemctl enable mysqld &>> $LOGFILE
 systemctl start mysqld  
 
 VALIDATE $? "enable and start mysql"

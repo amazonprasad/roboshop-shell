@@ -77,7 +77,7 @@ systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "Daemon-reload"
 
-systemctl enable dispatch 
+systemctl enable dispatch &>> $LOGFILE
 systemctl start dispatch 
 
 
