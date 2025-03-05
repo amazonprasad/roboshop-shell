@@ -56,7 +56,6 @@ unzip -o /tmp/payment.zip &>> $LOGFILE
 
 VALIDATE $? " unzip files"
 
-cd /app 
 pip3.6 install -r requirements.txt &>> $LOGFILE
 
 VALIDATE $? " Install require "
