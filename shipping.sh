@@ -49,11 +49,12 @@ curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shippin
 VALIDATE $? " Downloading files"
 
 cd /app 
+VALIDATE $? " moving to app directory"
+
 unzip -o /tmp/shipping.zip &>> $LOGFILE
 
 VALIDATE $? " Unzip files"
 
-cd /app 
 mvn clean package &>> $LOGFILE
 
 VALIDATE $? " MVn cleam packages"
